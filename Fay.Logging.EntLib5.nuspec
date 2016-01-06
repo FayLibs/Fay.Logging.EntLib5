@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package >
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Fay.Logging.EntLib5</id>
     <version>0.9.0</version>
@@ -17,6 +17,10 @@
     <copyright>Copyright © 2015 Rodney S. Foley</copyright>
     <tags>fay faylogging logging delegate logger log tracing logfiles api facade library</tags>
   </metadata>
+  <dependencies>
+    <dependency id="Fey.Logging" version="[0.9.0]" />
+    <dependency id="EnterpriseLibrary.Logging" version="[5.0.505, 6.0.0)" />
+  </dependencies>
   <files>
     <file src=".\src\Fay.Logging.EntLib5\bin\Release\Fay.Logging.EntLib5.dll" target="lib\portable-net45+win8+netcore50+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
     <file src=".\src\Fay.Logging.EntLib5\bin\Release\Fay.Logging.EntLib5.XML" target="lib\portable-net45+win8+netcore50+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
