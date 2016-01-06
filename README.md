@@ -9,6 +9,7 @@ Quick Start
 ---
 Below is a simplified example for logging strings when you don't use categories. A more robust implementation may use a service locator or dependency inject framework to initialize the logger.
 
+```cs
     // Initialize logger someplace
     IDelegateLogger<string> logger = new EntLibSimpleMessageLogger(Logger.Writer);
     
@@ -26,9 +27,9 @@ Below is a simplified example for logging strings when you don't use categories.
     
     // When application is done needing the logger its recommend to dispose it
     logger.Dispose();
-
+```
 Below is a simple example for logging to categories.
-
+```cs
     // Initialize logger someplace
     IDelegateLogger<MessageWithCategories> logger = new EntLibSimpleCategoryLogger(Logger.Writer);
     
@@ -46,6 +47,7 @@ Below is a simple example for logging to categories.
     
     // When application is done needing the logger its recommend to dispose it
     logger.Dispose();
+```
 
 [FayLog]:  https://github.com/FayLibs/Fay.Logging
 [EntLib5Log]: http://msdn.microsoft.com/en-us/library/ff664569(PandP.50).aspx
