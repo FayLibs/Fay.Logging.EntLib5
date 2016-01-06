@@ -1,0 +1,420 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fay.Logging</name>
+    </assembly>
+    <members>
+        <member name="T:Fay.Logging.DelegateLogger`1">
+            <summary>
+            Abstract base class that provides an implementation that redirects all the convenience methods to the protected abstract Write method.
+            </summary>
+            <typeparam name="TMetadata">The type of the metadata used for the underlying logger.</typeparam>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.Critical(System.Func{`0})">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate" /> at the <see cref="F:Fay.Logging.LogSeverity.Critical" /> severity.
+            </summary>
+            <param name="messageDelegate">The delegate to be use to obtain the message to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the delegate will never be called.
+            If the delegate is null it will be ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.Error(System.Func{`0})">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate" /> at the <see cref="F:Fay.Logging.LogSeverity.Error" /> severity.
+            </summary>
+            <param name="messageDelegate">The delegate to be use to obtain the message to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the delegate will never be called.
+            If the delegate is null it will be ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.Warning(System.Func{`0})">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate" /> at the <see cref="F:Fay.Logging.LogSeverity.Warning" /> severity.
+            </summary>
+            <param name="messageDelegate">The delegate to be use to obtain the message to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the delegate will never be called.
+            If the delegate is null it will be ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.Information(System.Func{`0})">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate" /> at the <see cref="F:Fay.Logging.LogSeverity.Information" /> severity.
+            </summary>
+            <param name="messageDelegate">The delegate to be use to obtain the message to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the delegate will never be called.
+            If the delegate is null it will be ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.Verbose(System.Func{`0})">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate" /> at the <see cref="F:Fay.Logging.LogSeverity.Verbose" /> severity.
+            </summary>
+            <param name="messageDelegate">The delegate to be use to obtain the message to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the delegate will never be called.
+            If the delegate is null it will be ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.CriticalException(System.Func{`0},System.Exception)">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate" /> along with the provided exception at the <see cref="F:Fay.Logging.LogSeverity.Critical" /> severity.
+            </summary>
+            <param name="messageDelegate">The delegate to be use to obtain the message to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the delegate will never be called.
+            If the delegate is null it will be ignored.</param>
+            <param name="ex">The exception to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the exception will never be called.
+            If the exception is null it will be ignored.
+            If the exception is an <see cref="T:System.AggregateException" /> it will be flattened before being used.</param>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.ErrorException(System.Func{`0},System.Exception)">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate" /> along with the provided exception at the <see cref="F:Fay.Logging.LogSeverity.Error" /> severity.
+            </summary>
+            <param name="messageDelegate">The delegate to be use to obtain the message to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the delegate will never be called.
+            If the delegate is null it will be ignored.</param>
+            <param name="ex">The exception to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the exception will never be called.
+            If the exception is null it will be ignored.
+            If the exception is an <see cref="T:System.AggregateException" /> it will be flattened before being used.</param>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.Exception(Fay.Logging.LogSeverity,System.Func{`0},System.Exception)">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate" /> along with the provided exception at the specified <see cref="T:Fay.Logging.LogSeverity" />.
+            </summary>
+            <param name="severity">The <see cref="T:Fay.Logging.LogSeverity" /> to use.</param>
+            <param name="messageDelegate">The delegate to be use to obtain the message to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the delegate will never be called.
+            If the delegate is null it will be ignored.</param>
+            <param name="ex">The exception to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the exception will never be called.
+            If the exception is null it will be ignored.
+            If the exception is an <see cref="T:System.AggregateException" /> it will be flattened before being used.</param>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.Message(Fay.Logging.LogSeverity,System.Func{`0})">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate" /> at the specified <see cref="T:Fay.Logging.LogSeverity" />.
+            </summary>
+            <param name="severity">The <see cref="T:Fay.Logging.LogSeverity" /> to use.</param>
+            <param name="messageDelegate">The delegate to be use to obtain the message to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the delegate will never be called.
+            If the delegate is null it will be ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.IsSeverityInScope(Fay.Logging.LogSeverity,System.Func{`0})">
+            <summary>
+            Returns true if the provided <see cref="T:Fay.Logging.LogSeverity" /> is currently in scope.
+            </summary>
+            <param name="severity">The severity to check if it is in scope.</param>
+            <param name="messageDelegate">The delegate to be use to obtain the message to log if the severity is within scope.
+            If the severity is outside of the scope to be logged then the delegate will never be called.
+            If the delegate is null it will be ignored.</param>
+            <returns><c>true</c> if [is severity in scope] [the specified severity]; otherwise, <c>false</c>.</returns>
+            <remarks>It is recommend that <paramref name="messageDelegate" /> not allowed to be null, but in some implementations this may not be easy or even possible.
+            The implementation documentation should be referenced for more details.</remarks>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.Write(Fay.Logging.LogSeverity,System.Func{`0})">
+            <summary>
+            Implementation specific method that actually writes to underlying logger.
+            </summary>
+            <param name="severity">
+            The <see cref="T:Fay.Logging.LogSeverity"/> to use.
+            </param>
+            <param name="messageDelegate">
+            The delegate to be use to obtain the message to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the delegate will never be called. 
+            If the delegate is null it will be ignored.
+            </param>   
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.InjectExceptionIntoMessageDelegate(System.Func{`0},System.Exception)">
+            <summary>
+            Used to inject, replace, or wrap the provided <paramref name="messageDelegate"/> with the provided <paramref name="ex"/>.
+            </summary>
+            <param name="messageDelegate">The message delegate to inject, replace, or wrap.</param>
+            <param name="ex">The exception to inject, replace, or wrap.</param>
+            <returns>
+            A delegate that will return the results of the <paramref name="messageDelegate"/> and <paramref name="ex"/>.
+            </returns>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.Dispose">
+            <summary>
+            Implemented following Microsoft's Dispose Pattern, therefore if disposing of resources is required please override the protected Dispoise(bool).
+            See MSDN Documentation for more details: https://msdn.microsoft.com/library/b1yfkh5e.aspx
+            </summary>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.Dispose(System.Boolean)">
+            <summary>
+            Placeholder method to use if needed to dispose of resources.  
+            Default implementation does nothing. 
+            If overridden the implementation should follow Microsoft's Dispose Pattern, the implemented <see cref="M:System.IDisposable.Dispose"/> already does and calls this method with a true.
+            See MSDN Documentation for more details: https://msdn.microsoft.com/library/b1yfkh5e.aspx
+            </summary>
+            <param name="disposing">
+            true if method was invoked from the <see cref="M:System.IDisposable.Dispose"/> implementation; other method was invoked from the finalizer.
+            </param>
+        </member>
+        <member name="M:Fay.Logging.DelegateLogger`1.MergeMessageWithException(System.String,System.Exception)">
+            <summary>
+            Merges the message with exception by having the <paramref name="message"/> be the first line followed by the results of  
+            <see cref="M:System.Exception.ToString"/> being placed within a <c>begin</c> and <c>end</c> block to set it appart. 
+            </summary>
+            <param name="message">
+            The message to merge. 
+            If null or empty will be ignored, if it is only whitespace it will be used. 
+            </param>
+            <param name="ex">
+            The ex to merge.
+            If null will return the provided <paramref name="message"/>.
+            </param>
+            <returns>Newly merged message</returns>
+        </member>
+        <member name="T:Fay.Logging.IDelegateLogger`1">
+            <summary>
+            Interface to describe a message delegate based logger.
+            </summary>
+            <typeparam name="TMetadata">The type of the metadata used for the underlying logger.</typeparam>
+        </member>
+        <member name="M:Fay.Logging.IDelegateLogger`1.Critical(System.Func{`0})">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate"/> at the <see cref="F:Fay.Logging.LogSeverity.Critical"/> severity.
+            </summary>
+            <param name="messageDelegate">
+            The delegate to be use to obtain the message to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the delegate will never be called. 
+            If the delegate is null it will be ignored.
+            </param>        
+        </member>
+        <member name="M:Fay.Logging.IDelegateLogger`1.Error(System.Func{`0})">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate"/> at the <see cref="F:Fay.Logging.LogSeverity.Error"/> severity.
+            </summary>
+            <param name="messageDelegate">
+            The delegate to be use to obtain the message to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the delegate will never be called. 
+            If the delegate is null it will be ignored.
+            </param>        
+        </member>
+        <member name="M:Fay.Logging.IDelegateLogger`1.Warning(System.Func{`0})">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate"/> at the <see cref="F:Fay.Logging.LogSeverity.Warning"/> severity.
+            </summary>
+            <param name="messageDelegate">
+            The delegate to be use to obtain the message to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the delegate will never be called. 
+            If the delegate is null it will be ignored.
+            </param>        
+        </member>
+        <member name="M:Fay.Logging.IDelegateLogger`1.Information(System.Func{`0})">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate"/> at the <see cref="F:Fay.Logging.LogSeverity.Information"/> severity.
+            </summary>
+            <param name="messageDelegate">
+            The delegate to be use to obtain the message to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the delegate will never be called. 
+            If the delegate is null it will be ignored.
+            </param>        
+        </member>
+        <member name="M:Fay.Logging.IDelegateLogger`1.Verbose(System.Func{`0})">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate"/> at the <see cref="F:Fay.Logging.LogSeverity.Verbose"/> severity.
+            </summary>
+            <param name="messageDelegate">
+            The delegate to be use to obtain the message to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the delegate will never be called. 
+            If the delegate is null it will be ignored.
+            </param>        
+        </member>
+        <member name="M:Fay.Logging.IDelegateLogger`1.CriticalException(System.Func{`0},System.Exception)">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate"/> along with the provided exception at the <see cref="F:Fay.Logging.LogSeverity.Critical"/> severity.
+            </summary>      
+            <param name="messageDelegate">
+            The delegate to be use to obtain the message to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the delegate will never be called. 
+            If the delegate is null it will be ignored.
+            </param>       
+            <param name="ex">
+            The exception to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the exception will never be called. 
+            If the exception is null it will be ignored.
+            If the exception is an <see cref="T:System.AggregateException"/> it will be flattened before being used.
+            </param>
+        </member>
+        <member name="M:Fay.Logging.IDelegateLogger`1.ErrorException(System.Func{`0},System.Exception)">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate"/> along with the provided exception at the <see cref="F:Fay.Logging.LogSeverity.Error"/> severity.
+            </summary>      
+            <param name="messageDelegate">
+            The delegate to be use to obtain the message to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the delegate will never be called. 
+            If the delegate is null it will be ignored.
+            </param>       
+            <param name="ex">
+            The exception to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the exception will never be called. 
+            If the exception is null it will be ignored.
+            If the exception is an <see cref="T:System.AggregateException"/> it will be flattened before being used.
+            </param>
+        </member>
+        <member name="M:Fay.Logging.IDelegateLogger`1.Exception(Fay.Logging.LogSeverity,System.Func{`0},System.Exception)">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate"/> along with the provided exception at the specified <see cref="T:Fay.Logging.LogSeverity"/>.
+            </summary>
+            <param name="severity">
+            The <see cref="T:Fay.Logging.LogSeverity"/> to use.
+            </param>
+            <param name="messageDelegate">
+            The delegate to be use to obtain the message to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the delegate will never be called. 
+            If the delegate is null it will be ignored.
+            </param>       
+            <param name="ex">
+            The exception to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the exception will never be called. 
+            If the exception is null it will be ignored.
+            If the exception is an <see cref="T:System.AggregateException"/> it will be flattened before being used.
+            </param>
+        </member>
+        <member name="M:Fay.Logging.IDelegateLogger`1.Message(Fay.Logging.LogSeverity,System.Func{`0})">
+            <summary>
+            Attempt to log the result the <paramref name="messageDelegate"/> at the specified <see cref="T:Fay.Logging.LogSeverity"/>.
+            </summary>
+            <param name="severity">
+            The <see cref="T:Fay.Logging.LogSeverity"/> to use.
+            </param>
+            <param name="messageDelegate">
+            The delegate to be use to obtain the message to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the delegate will never be called. 
+            If the delegate is null it will be ignored.
+            </param>       
+        </member>
+        <member name="M:Fay.Logging.IDelegateLogger`1.IsSeverityInScope(Fay.Logging.LogSeverity,System.Func{`0})">
+            <summary>
+            Returns true if the provided <see cref="T:Fay.Logging.LogSeverity"/> is currently in scope.
+            </summary>
+            <param name="severity">The severity to check if it is in scope.</param>
+            <param name="messageDelegate">
+            The delegate to be use to obtain the message to log if the severity is within scope. 
+            If the severity is outside of the scope to be logged then the delegate will never be called. 
+            If the delegate is null it will be ignored.
+            </param> 
+            <remarks>
+            It is recommend that <paramref name="messageDelegate"/> not allowed to be null, but in some implementations this may not be easy or even possible.
+            The implementation documentation should be referenced for more details.
+            </remarks>
+        </member>
+        <member name="T:Fay.Logging.LogSeverity">
+            <summary>
+            Specifies the log levels available for message filtering. With Critical being the highest severity level and Verbose the lowest severity level.
+            </summary>
+        </member>
+        <member name="F:Fay.Logging.LogSeverity.Off">
+            <summary>
+            This will disable logging and not allow any messages through to the log.
+            </summary>
+        </member>
+        <member name="F:Fay.Logging.LogSeverity.Critical">
+            <summary>
+            This level will allow only Critical messages through to the log.
+            </summary>
+        </member>
+        <member name="F:Fay.Logging.LogSeverity.Error">
+            <summary>
+            This level will allow only Error and higher messages through to the log.
+            </summary>
+        </member>
+        <member name="F:Fay.Logging.LogSeverity.Warning">
+            <summary>
+            This level will allow only Warning and higher messages through to the log.
+            </summary>
+        </member>
+        <member name="F:Fay.Logging.LogSeverity.Information">
+            <summary>
+            This level will allow only Information and higher messages through to the log.
+            </summary>
+        </member>
+        <member name="F:Fay.Logging.LogSeverity.Verbose">
+            <summary>
+            This level will allow only Verbose and higher messages through to the log. (This currently is equivalent to All.)
+            </summary>
+        </member>
+        <member name="F:Fay.Logging.LogSeverity.All">
+            <summary>
+            This level will allows all messages through to the log.
+            </summary>
+        </member>
+        <member name="T:Fay.Logging.NullLogger`1">
+            <summary>
+            A null logger implementation of the <see cref="T:Fay.Logging.IDelegateLogger`1"/> interface. All log requests are ignored, and all severities are out of scope. 
+            </summary>
+             <typeparam name="TMetadata">The type of the metadata used for the underlying logger.</typeparam>
+        </member>
+        <member name="M:Fay.Logging.NullLogger`1.Dispose">
+            <summary>
+            Does nothing, as nothing needs to be disposed.
+            </summary>
+        </member>
+        <member name="M:Fay.Logging.NullLogger`1.Critical(System.Func{`0})">
+            <summary>
+            Ignores all values and does nothing.
+            </summary>
+            <param name="messageDelegate">Value is ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.NullLogger`1.Error(System.Func{`0})">
+            <summary>
+            Ignores all values and does nothing.
+            </summary>
+            <param name="messageDelegate">Value is ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.NullLogger`1.Warning(System.Func{`0})">
+            <summary>
+            Ignores all values and does nothing.
+            </summary>
+            <param name="messageDelegate">Value is ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.NullLogger`1.Information(System.Func{`0})">
+            <summary>
+            Ignores all values and does nothing.
+            </summary>
+            <param name="messageDelegate">Value is ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.NullLogger`1.Verbose(System.Func{`0})">
+            <summary>
+            Ignores all values and does nothing.
+            </summary>
+            <param name="messageDelegate">Value is ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.NullLogger`1.CriticalException(System.Func{`0},System.Exception)">
+            <summary>
+            Ignores all values and does nothing.
+            </summary>
+            <param name="messageDelegate">Value is ignored.</param>
+            <param name="ex">Value is ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.NullLogger`1.ErrorException(System.Func{`0},System.Exception)">
+            <summary>
+            Ignores all values and does nothing.
+            </summary>
+            <param name="messageDelegate">Value is ignored.</param>
+            <param name="ex">Value is ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.NullLogger`1.Exception(Fay.Logging.LogSeverity,System.Func{`0},System.Exception)">
+            <summary>
+            Ignores all values and does nothing.
+            </summary>
+            <param name="severity">Value is ignored.</param>
+            <param name="messageDelegate">Value is ignored.</param>
+            <param name="ex">Value is ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.NullLogger`1.Message(Fay.Logging.LogSeverity,System.Func{`0})">
+            <summary>
+            Ignores all values and does nothing.
+            </summary>
+            <param name="severity">Value is ignored.</param>
+            <param name="messageDelegate">Value is ignored.</param>
+        </member>
+        <member name="M:Fay.Logging.NullLogger`1.IsSeverityInScope(Fay.Logging.LogSeverity,System.Func{`0})">
+            <summary>
+            Always returns false.
+            </summary>
+            <param name="severity">Value is ignored.</param>
+            <param name="messageDelegate">Value is ignored.</param>
+            <returns><c>false</c></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Fay.Logging.EntLib5</id>
+    <version>0.9.0</version>
+    <title>Fay Logging EntLib5</title>
+    <authors>Rodney S. Foley</authors>
+    <owners>Rodney S. Foley</owners>
+    <licenseUrl>https://github.com/FayLibs/FayLogging/blob/master/LICENCE.txt</licenseUrl>
+    <projectUrl>http://github.com/FayLibs/FayLogging</projectUrl>
+    <iconUrl>http://raw.githubusercontent.com/FayLibs/FayAssets/master/Images/FayLogo64.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	  <summary>A Fay Logging facade for Enterprise Library Logging</summary>
+    <description>It is a Fay Logging facade for the Microsoft Enterprise Library Logging Application Block version 5. This facade povides a simple delegate logging API making logging easier, while helping to make sure any of the code required to generate a log message is not executed unless the logging level is within scope.</description>
+	  <language>en-US</language>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright © 2015 Rodney S. Foley</copyright>
+    <tags>fay faylogging logging delegate logger log tracing logfiles api facade library</tags>
+  </metadata>
+  <files>
+    <file src=".\src\Fay.Logging.EntLib5\bin\Release\Fay.Logging.EntLib5.dll" target="lib\portable-net45+win8+netcore50+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+    <file src=".\src\Fay.Logging.EntLib5\bin\Release\Fay.Logging.EntLib5.XML" target="lib\portable-net45+win8+netcore50+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+  </files>
+</package>
