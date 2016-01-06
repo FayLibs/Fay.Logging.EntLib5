@@ -11,7 +11,7 @@
     <iconUrl>http://raw.githubusercontent.com/FayLibs/FayAssets/master/Images/FayLogo64.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 	  <summary>A Fay Logging facade for Enterprise Library Logging</summary>
-    <description>It is a Fay Logging facade for the Microsoft Enterprise Library Logging Application Block version 5. This facade povides a simple delegate logging API making logging easier, while helping to make sure any of the code required to generate a log message is not executed unless the logging level is within scope.</description>
+    <description>It is a Fay Logging facade for the Microsoft Enterprise Library Logging Application Block version 5. This facade provides a simple delegate logging API making logging easier, while helping to make sure any of the code required to generate a log message is not executed unless the logging level is within scope.</description>
 	  <language>en-US</language>
     <releaseNotes>Initial Release</releaseNotes>
     <copyright>Copyright © 2015 Rodney S. Foley</copyright>
