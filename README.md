@@ -51,3 +51,9 @@ Below is a simple example for logging to categories.
 
 [FayLog]:  https://github.com/FayLibs/Fay.Logging
 [EntLib5Log]: http://msdn.microsoft.com/en-us/library/ff664569(PandP.50).aspx
+
+## Downloads
+
+Fey Logging EntLib 5 is available via NuGet:
+
+- [Fay Logging EntLib5] (https://www.nuget.org/packages/Fay.Logging.EntLib5/)
